@@ -1,4 +1,4 @@
-package com.utils.tools.PDFUtils;
+package com.utils.tools.pdfutils;
 
 import com.itextpdf.text.Image;
 import com.itextpdf.text.pdf.PdfContentByte;

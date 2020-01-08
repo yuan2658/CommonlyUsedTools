@@ -1,14 +1,18 @@
 package com.utils.tools;
 
-import com.utils.tools.PDFUtils.PDFUtils;
+import com.sun.jndi.toolkit.url.UrlUtil;
+import com.utils.tools.pdfutils.PDFUtils;
+import com.utils.tools.utils.UrlUtils;
+import com.utils.tools.webutils.HttpUtils;
+import com.utils.tools.webutils.ResponseUtils;
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.util.ResourceUtils;
 
+import javax.servlet.http.HttpServletResponse;
 import java.io.File;
-import java.io.FileNotFoundException;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = ToolsApplication.class)
@@ -26,6 +30,17 @@ class ToolsApplicationTests {
         String outputPdfPath = file3.getPath();
         String imgPath = file2.getPath();
         PDFUtils.insertImgToPdf(inputPdfPath,outputPdfPath,imgPath,100,700);
+    }
+
+
+
+
+    @Test
+    void geturl() throws Exception {
+        //请求接口地址
+        String url ="http://cpdc.chinapost.com.cn/web/api.php?op=get_linkage&act=ajax_select&keyid=1&parent_id="+0;
+        String jsonByUrl = UrlUtils.getJsonByUrl(url);
+        System.out.println(jsonByUrl);
     }
 
 }
