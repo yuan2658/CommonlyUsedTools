@@ -1,0 +1,12 @@
+
+server:
+  port: 8080
+
+
+
+#静态资源映射路径
+spring:
+  resources:
+    static-locations: classpath:/
+  mvc:
+    static-path-pattern: /**
